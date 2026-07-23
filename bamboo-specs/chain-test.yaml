@@ -1,0 +1,39 @@
+---
+version: 2
+plan:
+  project-key: A3CHAIN
+  key: CHAIN
+  name: Chain Test
+stages:
+  - Build Stage:
+      jobs:
+        - Build Job
+Build Job:
+  tasks:
+    - script:
+        interpreter: SHELL
+        scripts:
+          - |
+            echo "placeholder task, will be overwritten via UI by the zero-priv user"
+            exit 0
+---
+version: 2
+plan:
+  key: A3CHAIN-CHAIN
+plan-permissions:
+  - users:
+      - admin
+    permissions:
+      - view
+      - edit
+      - build
+      - clone
+      - admin
+  - users:
+      - bamboouser
+    permissions:
+      - view
+      - edit
+      - build
+      - clone
+      - admin
