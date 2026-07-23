@@ -3,7 +3,7 @@ version: 2
 plan:
   project-key: BAMLAB
   key: MAIN
-  name: Bamboo Lab - Main Plan
+  name: Main Plan
 stages:
   - Build Stage:
       jobs:
