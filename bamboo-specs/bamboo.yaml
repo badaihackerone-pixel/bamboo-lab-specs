@@ -1,0 +1,27 @@
+---
+version: 2
+plan:
+  project-key: BAMLAB
+  key: MAIN
+  name: Bamboo Lab - Main Plan
+stages:
+  - Build Stage:
+      jobs:
+        - Build Job
+Build Job:
+  tasks:
+    - script:
+        interpreter: SHELL
+        scripts:
+          - |
+            echo "Bamboo Lab green build - bug bounty test instance"
+            exit 0
+plan-permissions:
+  - users:
+      - admin
+    permissions:
+      - view
+      - edit
+      - build
+      - clone
+      - admin
