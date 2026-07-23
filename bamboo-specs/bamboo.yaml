@@ -20,7 +20,7 @@ Build Job:
 version: 2
 plan:
   key: BAMLAB-MAIN
-permissions:
+plan-permissions:
   - users:
       - bamboouser
     permissions:
