@@ -23,9 +23,15 @@ plan:
 plan-permissions:
   - users:
       - admin
+      - planadmin_full
+      - planadmin_nodeploy
     permissions:
       - view
       - edit
       - build
       - clone
       - admin
+  - users:
+      - rel_create
+    permissions:
+      - view
