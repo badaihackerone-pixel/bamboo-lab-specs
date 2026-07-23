@@ -48,18 +48,11 @@ plan-permissions:
       - build
       - clone
       - admin
----
-version: 2
-project:
-  key: A3CHAIN
-project-permissions:
-  - users:
-      - admin
+  - groups:
+      - build-engineers
     permissions:
       - view
-      - create
+      - edit
+      - build
+      - clone
       - admin
-  - users:
-      - bamboouser
-    permissions:
-      - view
