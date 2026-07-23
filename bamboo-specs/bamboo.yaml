@@ -22,7 +22,7 @@ plan:
   key: BAMLAB-MAIN
 plan-permissions:
   - users:
-      - bamboouser
+      - admin
     permissions:
       - view
       - edit
