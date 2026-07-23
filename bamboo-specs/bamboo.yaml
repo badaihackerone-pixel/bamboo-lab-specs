@@ -16,9 +16,13 @@ Build Job:
           - |
             echo "Bamboo Lab green build - bug bounty test instance"
             exit 0
-plan-permissions:
+---
+version: 2
+plan:
+  key: BAMLAB-MAIN
+permissions:
   - users:
-      - admin
+      - bamboouser
     permissions:
       - view
       - edit
